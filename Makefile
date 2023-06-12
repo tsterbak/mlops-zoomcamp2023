@@ -18,3 +18,9 @@ train:
 
 tune:
 	poetry run python scripts/hpo.py --data_path data/processed/ --num_trials 10
+
+prefect:
+	poetry run prefect server start
+
+prefect-worker:
+	poetry run prefect worker start --pool zoompool --work-queue default
